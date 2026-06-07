@@ -34,6 +34,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',  # Must be before django.contrib.admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -147,4 +148,19 @@ REST_FRAMEWORK = {
         'anon': '100/day',
         'user': '1000/day',
     }
+}
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Yohannes Portfolio Admin",
+    "site_header": "Portfolio CMS",
+    "site_brand": "Yohannes Tekle",
+    "welcome_sign": "Welcome to Admin Dashboard",
+    "copyright": "Yohannes Tekle",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "api.Project": "fas fa-project-diagram",
+        "blog.BlogPost": "fas fa-blog",
+    },
 }
